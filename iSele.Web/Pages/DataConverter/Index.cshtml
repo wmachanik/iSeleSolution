@@ -1,0 +1,149 @@
+﻿@page
+@model iSele.Pages.DataConverter.IndexModel
+@{
+    ViewData["Title"] = "Data Converter";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+
+<h1>Data Converter</h1>
+
+<p>Conversion of the old Access database into the new.</p>
+<br>
+
+<ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#cvhome">Customer</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#menu1">Accounts</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#menu2">Items</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#menu3">Orders</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#menu4">Reminders</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#menu5">Repairs</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#menu6">Lookups</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#sysmenu">System</a>
+    </li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content ">
+    <div id="cvhome" class="container-fluid tab-pane active">
+        <br>
+        <partial name="PartialViews/_CustomerConversionPartial" />
+    </div>
+    <div id="menu1" class="container-fluid tab-pane fade">
+        <br>
+        <partial name="PartialViews/_AccountsConversionPartial" />
+    </div>
+    <div id="menu2" class="container-fluid tab-pane fade">
+        <br>
+        <partial name="PartialViews/_ItemsConversionPartial" />
+    </div>
+    <div id="menu3" class="container-fluid tab-pane fade">
+        <br>
+        <partial name="PartialViews/_OrdersConversionPartial" />
+    </div>
+    <div id="menu4" class="container-fluid tab-pane fade">
+        <br>
+        <partial name="PartialViews/_RemindersConversionPartial" />
+    </div>
+    <div id="menu5" class="container-fluid tab-pane fade">
+        <br>
+        <partial name="PartialViews/_RepairsConversionPartial" />
+    </div>
+    <div id="menu6" class="container-fluid tab-pane fade">
+        <br>
+        <partial name="PartialViews/_LookupsConversionPartial" />
+    </div>
+    <div id="sysmenu" class="container-fluid tab-pane fade">
+        <br>
+        <partial name="PartialViews/_SystemConversionPartial" />
+    </div>
+</div>
+
+
+
+<!-- Nav tabs -->
+@*
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab pill" href="#customer-tab">Customers</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab pill" href="#acc-tab">Accounts</a>
+        </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#items">Items</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#orders">Orders</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#reminders">Reminders</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#repairs">Repairs</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#lookups">Lookups</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#system">System</a>
+            </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div id="customer-tab" class="container-fluid tab-pane active">
+            <br>
+            <partial name="PartialViews/_CustomerConversionPartial" />
+        </div>
+        <div id="acc-tab" class="container-fluid tab-pane fade">
+            <br>
+            <h1>accounts</h1>
+            <partial name="PartialViews/_AccountsConversionPartial" />
+        </div>
+                <div id="items" class="container-fluid tab-pane fade">
+                    <br>
+                    <partial name="PartialViews/_ItemsConversionPartial" />
+                </div>
+                <div id="orders" class="container-fluid tab-pane fade">
+                    <br>
+                    <partial name="PartialViews/_OrdersConversionPartial" />
+                </div>
+                <div id="reminders" class="container-fluid tab-pane fade">
+                    <br>
+                    <partial name="PartialViews/_RemindersConversionPartial" />
+                </div>
+                <div id="repairs" class="container-fluid tab-pane fade">
+                    <br>
+                    <partial name="PartialViews/_RepairsConversionPartial" />
+                </div>
+                <div id="lookups" class="container-fluid tab-pane fade">
+                    <br>
+                    <partial name="PartialViews/_LookupsConversionPartial" />
+                </div>
+                <div id="system" class="container-fluid tab-pane fade">
+                    <br>
+                    <partial name="PartialViews/_SystemConversionPartial" />
+                </div>
+            </div>
+    </div>
+            <h1>Data Converter</h1>
+
+        <p>Conversion of the old Access database into the new.</p>
+        <br>
+*@
