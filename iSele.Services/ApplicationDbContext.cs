@@ -4,7 +4,7 @@ using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace iSele.Web.FrontEnd.Data
+namespace iSele.Services
 {
     public class ApplicationDbContext : IdentityDbContext
     {

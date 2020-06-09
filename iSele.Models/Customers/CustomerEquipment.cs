@@ -1,4 +1,5 @@
-﻿using iSele.Models.Lookups;
+﻿using iSele.Models.General;
+using iSele.Models.Lookups;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
