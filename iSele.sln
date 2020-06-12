@@ -3,7 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30128.74
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iSele.Web.FrontEnd", "iSele.Web.FrontEnd\iSele.Web.FrontEnd.csproj", "{5FFCF545-461D-4CB4-AAE0-9A8BBDE3B4AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iSele.Web.FrontEnd", "iSele.Web.FrontEnd\iSele.Web.FrontEnd.csproj", "{5FFCF545-461D-4CB4-AAE0-9A8BBDE3B4AD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{48B73731-326A-43BD-A268-2FE8BCEF2AEA} = {48B73731-326A-43BD-A268-2FE8BCEF2AEA}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iSele.Models", "iSele.Models\iSele.Models.csproj", "{48B73731-326A-43BD-A268-2FE8BCEF2AEA}"
 EndProject

@@ -7,7 +7,7 @@ namespace iSele.Models.Lookups
 {
     public class WeekDay
     {
-        public int WeekDaysID  { get; set; }
+        public int WeekDayID  { get; set; }
         [Required]
         [StringLength(10)]
         public string WeekDayName { get; set; }
