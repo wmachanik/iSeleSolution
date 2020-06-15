@@ -18,9 +18,9 @@ namespace iSele.Models.Accounts
         [DisplayName("Payment Day of Month")]
         public int DayOfMonth { get; set; }
         [DisplayName("Use Days?")]
-        public bool UseDays { get; set; }
+        public bool? UseDays { get; set; }
         [DisplayName("Enabled?")]
-        public bool IsEnabled { get; set; }
+        public bool? IsEnabled { get; set; }
         public string Notes { get; set; }
         [Timestamp] 
         public byte[] RowVersion { get; set; }

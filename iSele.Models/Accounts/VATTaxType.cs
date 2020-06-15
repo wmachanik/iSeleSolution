@@ -19,7 +19,7 @@ namespace iSele.Models.Accounts
         [DisplayName("VAT or Tax rate")]
         public decimal VATTaxRate { get; set; }
         [DisplayName("Is this the default rate")]
-        public bool IsDefault { get; set; }
+        public bool? IsDefault { get; set; }
         public string Notes { get; set; }
         [Timestamp] public byte[] RowVersion { get; set; }
 }

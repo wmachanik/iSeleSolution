@@ -17,6 +17,6 @@ namespace iSele.Models.Items
         [Timestamp]    
         public byte[] RowVersion { get; set; }
         [ForeignKey("PriceListTypeID")]
-        public PriceListType PriceListType { get; set; }
+        public PriceListTypeConfiguraton PriceListType { get; set; }
     }
 }

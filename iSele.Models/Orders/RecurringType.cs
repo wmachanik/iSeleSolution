@@ -7,7 +7,7 @@ namespace iSele.Models.Orders
 {
     public class RecurringType
     {
-        public int RecurringID { get; set; }
+        public int RecurringTypeID { get; set; }
         [Required]
         [StringLength(50)]
         public string TypeName { get; set; }

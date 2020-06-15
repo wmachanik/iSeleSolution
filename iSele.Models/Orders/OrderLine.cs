@@ -1,7 +1,9 @@
 ﻿using iSele.Models.Items;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace iSele.Models.Orders
@@ -11,7 +13,10 @@ namespace iSele.Models.Orders
         public int OrderLineID { get; set; }
         public int OrderID { get; set; }
         public int ItemID { get; set; }
-        public decimal QuantityOrdered { get; set; }
+        [DataType("decimal(12,4)")]
+        [Column(TypeName = "decimal(8,4)")]
+        [DisplayName("Qty")]
+        public decimal QtyOrdered { get; set; }
         public int VarietyTypeID { get; set; }
         public int PackagingID { get; set; }
         public string Notes { get; set; }

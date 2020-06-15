@@ -1,6 +1,7 @@
 ﻿using iSele.Models.Items;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
@@ -14,7 +15,9 @@ namespace iSele.Models.Orders
         public int ItemRequiredID { get; set; }
         public int PackagingRequiredID { get; set; }
         public int VarietyRequiredID { get; set; }
-
+        [DataType("decimal(12,4)")]
+        [Column(TypeName = "decimal(8,4)")]
+        [DisplayName("Qty")]
         public decimal QtyRequired { get; set; }
         public bool Enabled { get; set; }
         [Timestamp]

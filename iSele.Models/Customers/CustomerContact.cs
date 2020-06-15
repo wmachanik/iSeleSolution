@@ -9,7 +9,9 @@ namespace iSele.Models.Customers
 {
     public class CustomerContact
     {
+        [Key]
         public int ContactID { get; set; }
+        public int CustomerID { get; set; }
         [StringLength(100)]
         [DisplayName("First Name")]
         public string FirstName { get; set; }
@@ -23,18 +25,19 @@ namespace iSele.Models.Customers
         public string Telephone { get; set; }
         [StringLength(25)]
         public string Mobile { get; set; }
-        public int DeliveryAddressID { get; set; }
+        public int ShippingAddressID { get; set; }
         public int PostalAddressID { get; set; }
         [DisplayName("Enabled")]
-        public bool IsEnabled { get; set; }
+        public bool? IsEnabled { get; set; }
         [DisplayName("Contact Type")]
         public int ContactTypeID { get; set; }
         public string Notes { get; set; }
 
         [Timestamp]
         public byte[] RowVersion { get; set; }
-        [ForeignKey("DeliveryAddressID")]
-        public Address DeliveryAddress { get; set; }
+
+        [ForeignKey("ShippingAddressID")]
+        public Address ShippingAddress { get; set; }
         [ForeignKey("PostalAddressID")]
         public Address PostalAddress { get; set; }
 

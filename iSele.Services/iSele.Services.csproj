@@ -13,6 +13,40 @@
   <ItemGroup>
     <Compile Remove="Migrations\20200611162232_initial.cs" />
     <Compile Remove="Migrations\20200611162232_initial.Designer.cs" />
+    <Compile Remove="Migrations\20200612120421_testingOndelete.cs" />
+    <Compile Remove="Migrations\20200612120421_testingOndelete.Designer.cs" />
+    <Compile Remove="Migrations\20200612141958_testingModleCreate.cs" />
+    <Compile Remove="Migrations\20200612141958_testingModleCreate.Designer.cs" />
+    <Compile Remove="Migrations\20200612142756_testingModelCreate.cs" />
+    <Compile Remove="Migrations\20200612142756_testingModelCreate.Designer.cs" />
+    <Compile Remove="Migrations\20200612195754_testing2XFK.cs" />
+    <Compile Remove="Migrations\20200612195754_testing2XFK.Designer.cs" />
+    <Compile Remove="Migrations\20200612200221_testing2XFK.cs" />
+    <Compile Remove="Migrations\20200612200221_testing2XFK.Designer.cs" />
+    <Compile Remove="Migrations\20200612200347_testing2XFK.cs" />
+    <Compile Remove="Migrations\20200612200347_testing2XFK.Designer.cs" />
+    <Compile Remove="Migrations\20200612200857_testing2XFK.cs" />
+    <Compile Remove="Migrations\20200612200857_testing2XFK.Designer.cs" />
+    <Compile Remove="Migrations\20200612201529_testing2XFK.cs" />
+    <Compile Remove="Migrations\20200612201529_testing2XFK.Designer.cs" />
+    <Compile Remove="Migrations\20200612201700_testing2XFKPlus2CustIDs.cs" />
+    <Compile Remove="Migrations\20200612201700_testing2XFKPlus2CustIDs.Designer.cs" />
+    <Compile Remove="Migrations\20200613120933_CustTest2.cs" />
+    <Compile Remove="Migrations\20200613120933_CustTest2.Designer.cs" />
+    <Compile Remove="Migrations\20200613122259_CustTest2.cs" />
+    <Compile Remove="Migrations\20200613122259_CustTest2.Designer.cs" />
+    <Compile Remove="Migrations\20200613124017_CustTest2.cs" />
+    <Compile Remove="Migrations\20200613124017_CustTest2.Designer.cs" />
+    <Compile Remove="Migrations\20200613124124_CustTest2.cs" />
+    <Compile Remove="Migrations\20200613124124_CustTest2.Designer.cs" />
+    <Compile Remove="Migrations\20200613124419_CustTest2.cs" />
+    <Compile Remove="Migrations\20200613124419_CustTest2.Designer.cs" />
+    <Compile Remove="Migrations\20200613124615_CustTest2.cs" />
+    <Compile Remove="Migrations\20200613124615_CustTest2.Designer.cs" />
+    <Compile Remove="Migrations\20200613174051_CustTest2.cs" />
+    <Compile Remove="Migrations\20200613174051_CustTest2.Designer.cs" />
+    <Compile Remove="Migrations\20200613180902_CustTest2.cs" />
+    <Compile Remove="Migrations\20200613180902_CustTest2.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using iSele.Services;
+using Microsoft.Extensions.Options;
 
 namespace iSele.Web.FrontEnd
 {
@@ -27,8 +28,17 @@ namespace iSele.Web.FrontEnd
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            // load and configure some default identity options, perahaps this shoudl nbe moved tothe apppsetting.json ?
+            services.AddDefaultIdentity<IdentityUser>(ido =>
+                {
+                    ido.SignIn.RequireConfirmedAccount = true;
+                    ido.Lockout.AllowedForNewUsers = true;
+                    ido.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(10);
+                    ido.Lockout.MaxFailedAccessAttempts = 6;
+                    ido.Password.RequiredLength = 8;
+                })
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("iSeleConnection")));
             services.AddRazorPages();

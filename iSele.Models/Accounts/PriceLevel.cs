@@ -12,7 +12,8 @@ namespace iSele.Models.Accounts
         [StringLength(50)]
         public string PriceLevelName { get; set; }
         public int PriceLeveTypeID { get; set; }
-        [Timestamp] public byte[] RowVersion { get; set; }
+        [Timestamp] 
+        public byte[] RowVersion { get; set; }
 
 //        public PriceLeveType PriceLeveTypes { get; set; }
     }

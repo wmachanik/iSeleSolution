@@ -10,11 +10,11 @@ namespace iSele.Models.Accounts
     {
         public int InvoiceTypeID { get; set; }
         [Required(ErrorMessage = "Invoice Type is required")]
-        [StringLength(30)]
+        [StringLength(50)]
         [DisplayName("Invoice Type")]
         public string InvoiceTypeName { get; set; }
         [DisplayName("Is Enabled")]
-        public bool IsEnabled { get; set; }
+        public bool? IsEnabled { get; set; }
         public string Notes { get; set; }
         [Timestamp] 
         public byte[] RowVersion { get; set; }

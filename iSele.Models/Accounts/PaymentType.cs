@@ -14,7 +14,7 @@ namespace iSele.Models.Accounts
         [DisplayName("Payment Type")]
         public string PaymentTypeName { get; set; }
         [DisplayName("Enabled?")]
-        public bool IsEnabled { get; set; }
+        public bool? IsEnabled { get; set; }
         public string Notes { get; set; }
         [Timestamp]
         public byte[] RowVersion { get; set; }

@@ -1,6 +1,6 @@
 ﻿using iSele.Models.Accounts;
-using iSele.Models.Contacts;
 using iSele.Models.Lookups;
+using iSele.Models.Orders;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,29 +31,26 @@ namespace iSele.Models.Customers
         public string Telephone { get; set; }
         [DisplayName("Primary Contact Mobile")]
         public string Mobile { get; set; }
-        [DisplayName("Is Mobilee Primary")]
+        [DisplayName("Mobile Is Primary Number")]
         public bool IsMobilePrimary { get; set; }
+        [DisplayName("Is Enabled")]
+        public bool? IsEnabled { get; set; }
         public int? CustomerTypeID { get; set; }
-        public int? PreferedDeliveryDayID { get; set; }
-        public int? PreferedDeliveryTimeID { get; set; }
-        
-        public int? PriceLevelID { get; set; }
-        [Timestamp] public byte[] RowVersion { get; set; }
+        [Timestamp] 
+        public byte[] RowVersion { get; set; }
 
         public CustomerType CustomerType { get; set; }
-        [ForeignKey("PreferedDeliveryDayID")]
-        public WeekDay PreferedDeliveryDay { get; set; }
-        [ForeignKey("PreferedDeliveryTimeID")]
-        public PreferedDeliveryTime PreferedDeliveryTime { get; set; }
-        public PriceLevel PriceLevel { get; set; }
+        [ForeignKey("CustomerID")]
+        public CustomerFulfilmentOptions CustomerFulfilmentOptions { get; set; }
         [ForeignKey("CustomerID")]
         public CustomerAccountingOptions CustomerAccountingOptions { get; set; }
-
         [ForeignKey("CustomerID")]
         public ICollection<CustomerPrefPerType> CustomerPrefPerTypes { get; set; }
 
         [ForeignKey("CustomerID")]
         public ICollection<CustomerEquipment> CustomerEquipment { get; set; }
 
+        [ForeignKey("CustomerID")]
+        public ICollection<CustomerContact> CustomerContacts { get; set; }
     }
 }
