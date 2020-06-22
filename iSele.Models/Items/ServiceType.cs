@@ -16,12 +16,12 @@ namespace iSele.Models.Items
         [StringLength(100)]
         [DisplayName("Serivce Type Description")]
         public string Description { get; set; }
-        public int PackagingID { get; set; }
-        public int VarietyID { get; set; }
+        //public int PackagingID { get; set; }
+        //public int VarietyID { get; set; }
         [Timestamp] 
         public byte[] RowVersion { get; set; }
 
-        public Packaging Packaging { get; set; }
-        public Variety Variety { get; set; }
+        //public Packaging Packaging { get; set; }
+        //public Variety Variety { get; set; }
     }
 }

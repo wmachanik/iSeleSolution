@@ -47,6 +47,24 @@
     <Compile Remove="Migrations\20200613174051_CustTest2.Designer.cs" />
     <Compile Remove="Migrations\20200613180902_CustTest2.cs" />
     <Compile Remove="Migrations\20200613180902_CustTest2.Designer.cs" />
+    <Compile Remove="Migrations\20200621120644_InitialWithCustomer.cs" />
+    <Compile Remove="Migrations\20200621120644_InitialWithCustomer.Designer.cs" />
+    <Compile Remove="Migrations\20200621120846_InitialWithCustomer.cs" />
+    <Compile Remove="Migrations\20200621120846_InitialWithCustomer.Designer.cs" />
+    <Compile Remove="Migrations\20200622114044_InitialWithCustomer.cs" />
+    <Compile Remove="Migrations\20200622114044_InitialWithCustomer.Designer.cs" />
+    <Compile Remove="Migrations\20200622115450_InitialWithCustomer.cs" />
+    <Compile Remove="Migrations\20200622115450_InitialWithCustomer.Designer.cs" />
+    <Compile Remove="Migrations\20200622120716_InitialWithCustomer.cs" />
+    <Compile Remove="Migrations\20200622120716_InitialWithCustomer.Designer.cs" />
+    <Compile Remove="Migrations\20200622120846_InitialWithCustomer.cs" />
+    <Compile Remove="Migrations\20200622120846_InitialWithCustomer.Designer.cs" />
+    <Compile Remove="Migrations\20200622122243_InitialWithCustomer.cs" />
+    <Compile Remove="Migrations\20200622122243_InitialWithCustomer.Designer.cs" />
+    <Compile Remove="Migrations\20200622122439_InitialWithCustomer.cs" />
+    <Compile Remove="Migrations\20200622122439_InitialWithCustomer.Designer.cs" />
+    <Compile Remove="Migrations\20200622122657_InitialWithCustomer.cs" />
+    <Compile Remove="Migrations\20200622122657_InitialWithCustomer.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

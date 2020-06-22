@@ -18,10 +18,10 @@ namespace iSele.Models.Items
         [StringLength(20)]
         public string SKU { get; set; }
         [DisplayName("Enabled?")]
-        public bool IsEnabled { get; set; }
+        public bool? IsEnabled { get; set; }
         [DisplayName("Item charateristics")]
         [StringLength(100)]
-        public string ItemCharacteritics { get; set; }
+        public string? ItemCharacteritics { get; set; }
         [DisplayName("Item Details")]
         [StringLength(255)]
         public string ItemDetail { get; set; }

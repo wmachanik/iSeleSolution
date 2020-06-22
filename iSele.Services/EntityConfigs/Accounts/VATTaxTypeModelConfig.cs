@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace iSele.Services.EntityConfigs
+namespace iSele.Services.EntityConfigs.Accounts
 {
-    internal class VATTaxTypeConfiguration : IEntityTypeConfiguration<VATTaxType>
+    internal class VATTaxTypeModelConfig : IEntityTypeConfiguration<VATTaxType>
     {
         public void Configure(EntityTypeBuilder<VATTaxType> VATTaxTypeBuilder)
         {

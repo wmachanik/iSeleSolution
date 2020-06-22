@@ -14,11 +14,11 @@ namespace iSele.Models.General
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "Date Received")]
-        public DateTime ReceiveDated { get; set; }
+        public DateTime ReceiveDate { get; set; }
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "Date Returned")]
-        public DateTime ReturneDated { get; set; }
+        public DateTime ReturneDate { get; set; }
 
         public Customer Customer;
         public DemoEquipment DemoEquipment;

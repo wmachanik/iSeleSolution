@@ -17,7 +17,7 @@ namespace iSele.Models.Accounts
         [Required]
         [DisplayName("Price Type By Value Name")]
         public string PriceTypeByValueName { get; set; }
-        [Column(TypeName = "decimal(12,4)")]
+        [Column(TypeName = "decimal(18,4)")]
         public decimal Value { get; set; }
         public string Notes { get; set; }
         [Timestamp] 

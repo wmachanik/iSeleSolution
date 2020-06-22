@@ -3,6 +3,7 @@ using iSele.Models.Lookups;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace iSele.Models.Customers
@@ -20,6 +21,7 @@ namespace iSele.Models.Customers
         public DateTime PurchaseDate { get; set; }
         public string Notes { get; set; }
         [Timestamp] public byte[] RowVersion { get; set; }
+        //[ForeignKey("CustomerID")]
         public Customer Customer { get; set; }
         public EquipmentType EquipmentType { get; set; }
     }

@@ -12,7 +12,7 @@ namespace iSele.Models.General
         [StringLength(10)]
         public string ISOAbbreviation { get; set; }
         [StringLength(30)]
-        public string TiemZoneName { get; set; }
+        public string TimeZoneName { get; set; }
         public short UTCOffset { get; set; }
         public bool HasDaylightSavings { get; set; }
         [Timestamp] public byte[] RowVersion { get; set; }

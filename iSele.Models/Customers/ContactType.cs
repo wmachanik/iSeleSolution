@@ -11,7 +11,7 @@ namespace iSele.Models.Customers
         [Required]
         [StringLength(100)]
         public string ContactTypeName { get; set; }
-        public bool IsFulfillmentContact { get; set; }
-        public bool IsAccountsContact { get; set; }
+        public bool? IsFulfillmentContact { get; set; }
+        public bool? IsAccountsContact { get; set; }
     }
 }

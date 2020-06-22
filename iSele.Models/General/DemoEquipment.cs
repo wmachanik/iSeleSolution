@@ -19,7 +19,7 @@ namespace iSele.Models.General
         [StringLength(80)]
         public string SerialNumber { get; set; }
         public string Notes { get; set; }
-
+        public EquipmentType EquipmentType { get; set; }
         [ForeignKey("DemoEquipmentID")]
         public ICollection<DemoEquipmentUsage> DemoEquipmentUsages { get; set; }
     }
