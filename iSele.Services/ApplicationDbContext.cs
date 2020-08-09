@@ -2,14 +2,24 @@
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Text;
+using iSele.Models;
 using iSele.Models.Accounts;
 using iSele.Models.Customers;
 using iSele.Models.General;
 using iSele.Models.Items;
+using iSele.Models.Lookups;
+using iSele.Models.Notifications;
+using iSele.Models.Orders;
+using iSele.Models.Repairs;
+using iSele.Models.System;
 using iSele.Services.EntityConfigs.Accounts;
 using iSele.Services.EntityConfigs.Customers;
 using iSele.Services.EntityConfigs.General;
 using iSele.Services.EntityConfigs.Items;
+using iSele.Services.EntityConfigs.Notifications;
+using iSele.Services.EntityConfigs.Orders;
+using iSele.Services.EntityConfigs.Repairs;
+using iSele.Services.EntityConfigs.System;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
@@ -72,7 +82,38 @@ namespace iSele.Services
         public DbSet<ItemGroup> ItemGroups { get; set; }
         public DbSet<UsedItemGroup> UsedItemGroups { get; set; }
         #endregion
-
+        #region LookupsDBStuff
+        public DbSet<PreferedDeliveryTime> PreferedDeliveryTimes { get; set; }
+        public DbSet<Models.Lookups.WeekDay> WeekDays { get; set; }
+        #endregion
+        #region NotificationsDBStuff
+        public DbSet<NotificationEmailText> NotificationEmailTexts { get; set; }
+        public DbSet<NotificationsSentLog> NotificationsSentLogs { get; set; }
+        public DbSet<NotificationType> NotificationTypes { get; set; }
+        #endregion
+        #region OrdersDBStuff
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderOptions> OrderOptions { get; set; }
+        public DbSet<OrderFulfillment> OrderFulfillments { get; set; }
+        public DbSet<OrderLine> OrderLines { get; set; }
+        public DbSet<OrderMethodType> OrderMethodTypes { get; set; }
+        public DbSet<OrderPaymentOptions> OrderPaymentOptions { get; set; }
+        public DbSet<RecurringOrder> RecurringOrders { get; set; }
+        public DbSet<RecurringOrderItem> RecurringOrderItem { get; set; }
+        public DbSet<RecurringType> RecurringTypes { get; set; }
+        #endregion
+        #region RepairsDBStuff
+        public DbSet<MachineCondition> MachineConditions { get; set; }
+        public DbSet<Repair> Repairs { get; set; }
+        public DbSet<RepairFault> RepairFaults { get; set; }
+        public DbSet<RepairStatus> RepairStatuses { get; set; }
+        #endregion
+        #region SystemDBStuff
+        public DbSet<ClosureDate> ClosureDates { get; set; }
+        public DbSet<Party> Parties { get; set; }
+        public DbSet<SystemPreferences> SystemPreferences { get; set; }
+        public DbSet<TotalCountTracker> TotalCounterTracker { get; set; }
+        #endregion
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -106,7 +147,7 @@ namespace iSele.Services
             modelBuilder.ApplyConfiguration<Address>(new AddressModelConfig());
             modelBuilder.Entity<ContactType>().ToTable(nameof(ContactTypes));
             modelBuilder.ApplyConfiguration<ContactType>(new ContactTypeModelConfig());
-            
+
             modelBuilder.Entity<Customer>().ToTable(nameof(Customers));
             modelBuilder.ApplyConfiguration<Customer>(new CustomerModelConfig());
 
@@ -118,7 +159,7 @@ namespace iSele.Services
             modelBuilder.Entity<CustomerEquipment>().ToTable(nameof(CustomerEquipment));
             modelBuilder.ApplyConfiguration<CustomerEquipment>(new CustomerEquipmentModelConfig());
             modelBuilder.Entity<CustomerFulfilmentOptions>().ToTable(nameof(CustomerFulfilmentOptions));
-                        
+
             modelBuilder.Entity<CustomerPostalAddress>().ToTable(nameof(CustomerPostalAddresses))
                 .HasKey(cadr => new { cadr.CustomerID, cadr.AddressID });
             modelBuilder.Entity<CustomerShippingAddress>().ToTable(nameof(CustomerShippingAddresses))
@@ -150,7 +191,7 @@ namespace iSele.Services
             modelBuilder.Entity<PostCodeArea>().ToTable(nameof(PostCodeAreas));
             modelBuilder.ApplyConfiguration<PostCodeArea>(new PostCodeAreaModelConfig());
             modelBuilder.Entity<Models.General.TimeZone>().ToTable(nameof(TimeZones))
-                .HasIndex(tz=>tz.TimeZoneName)
+                .HasIndex(tz => tz.TimeZoneName)
                 .IsUnique();
             #endregion
 
@@ -173,8 +214,53 @@ namespace iSele.Services
             modelBuilder.Entity<ItemGroup>().ToTable(nameof(ItemGroups));
             modelBuilder.ApplyConfiguration<ItemGroup>(new ItemGroupModelConfig());
             modelBuilder.Entity<UsedItemGroup>().ToTable(nameof(UsedItemGroups));
-            #endregion  
-
+            #endregion
+            #region NotificationsDBStuff
+            modelBuilder.Entity<NotificationEmailText>().ToTable(nameof(NotificationEmailTexts));
+            modelBuilder.Entity<NotificationsSentLog>().ToTable(nameof(NotificationsSentLogs));
+            modelBuilder.ApplyConfiguration<NotificationsSentLog>(new NotificationsSentLogModelConfig());
+            modelBuilder.Entity<NotificationType>().ToTable(nameof(NotificationTypes));
+            modelBuilder.ApplyConfiguration<NotificationType>(new NotificationTypeModelConfig());
+            #endregion
+            #region OrdersDBStuff
+            modelBuilder.Entity<Order>().ToTable(nameof(Orders));
+            modelBuilder.ApplyConfiguration<Order>(new OrderModelConfig());
+            modelBuilder.Entity<OrderOptions>().ToTable(nameof(OrderOptions));
+            //modelBuilder.ApplyConfiguration<OrderOptions>(new OrderOptionsModelConfig());
+            modelBuilder.Entity<OrderFulfillment>().ToTable(nameof(OrderFulfillments));
+            modelBuilder.ApplyConfiguration<OrderFulfillment>(new OrderFulfillmentModelConfig());
+            modelBuilder.Entity<OrderLine>().ToTable(nameof(OrderLines));
+            modelBuilder.ApplyConfiguration<OrderLine>(new OrderLineModelConfig());
+            modelBuilder.Entity<OrderMethodType>().ToTable(nameof(OrderMethodTypes));
+            modelBuilder.ApplyConfiguration<OrderMethodType>(new OrderMethodTypeModelConfig());
+            modelBuilder.Entity<OrderPaymentOptions>().ToTable(nameof(OrderPaymentOptions));
+            modelBuilder.ApplyConfiguration<OrderPaymentOptions>(new OrderPaymentOptionsModelConfig());
+            modelBuilder.Entity<RecurringOrder>().ToTable(nameof(RecurringOrders));
+            modelBuilder.ApplyConfiguration<RecurringOrder>(new RecurringOrderModelConfig());
+            modelBuilder.Entity<RecurringOrderItem>().ToTable(nameof(RecurringOrderItem));
+            modelBuilder.ApplyConfiguration<RecurringOrderItem>(new RecurringOrderItemModelConfig());
+            modelBuilder.Entity<RecurringType>().ToTable(nameof(RecurringTypes));
+            modelBuilder.ApplyConfiguration<RecurringType>(new RecurringTypeModelConfig());
+            #endregion
+            #region RepairsDBStuff
+            modelBuilder.Entity<MachineCondition>().ToTable(nameof(MachineConditions));
+            modelBuilder.ApplyConfiguration<MachineCondition>(new MachineConditionModelConfig());
+            modelBuilder.Entity<Repair>().ToTable(nameof(Repairs));
+            modelBuilder.ApplyConfiguration<Repair>(new RepairModelConfig());
+            modelBuilder.Entity<RepairFault>().ToTable(nameof(RepairFaults));
+            modelBuilder.ApplyConfiguration<RepairFault>(new RepairFaultModelConfig());
+            modelBuilder.Entity<RepairStatus>().ToTable(nameof(RepairStatuses));
+            modelBuilder.ApplyConfiguration<RepairStatus>(new RepairStatusModelConfig());
+            #endregion
+            #region SystemDBStuff
+            modelBuilder.Entity<ClosureDate>().ToTable(nameof(ClosureDates))
+                .HasIndex(cd=>cd.EventName)
+                .IsUnique();
+            modelBuilder.Entity<Party>().ToTable(nameof(Parties));
+            modelBuilder.ApplyConfiguration<Party>(new PartyModelConfig());
+            modelBuilder.Entity<SystemPreferences>().ToTable(nameof(SystemPreferences));
+            modelBuilder.Entity<TotalCountTracker>().ToTable(nameof(TotalCounterTracker));
+            #endregion
         }
-    }
+}
 }

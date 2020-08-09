@@ -12,7 +12,7 @@ namespace iSele.Models.Customers
     {
         public int CustomerEquipmentID { get; set; }
         public int CustomerID { get; set; }
-        public int EquipmentTypeID { get; set; }
+        public int? EquipmentTypeID { get; set; }
         [StringLength(50)]
         public string EquipSerialNo { get; set; }
         [DataType(DataType.Date)]
@@ -20,9 +20,11 @@ namespace iSele.Models.Customers
         [Display(Name = "Purchase Date")]
         public DateTime PurchaseDate { get; set; }
         public string Notes { get; set; }
-        [Timestamp] public byte[] RowVersion { get; set; }
+        [Timestamp] 
+        public byte[] RowVersion { get; set; }
+        
         //[ForeignKey("CustomerID")]
-        public Customer Customer { get; set; }
+        //public Customer Customer { get; set; }
         public EquipmentType EquipmentType { get; set; }
     }
 }

@@ -9,6 +9,9 @@ namespace iSele.Services.EntityConfigs.Accounts
         public void Configure(EntityTypeBuilder<PriceListType> priceListTypeBuilder)
         {
             priceListTypeBuilder.HasIndex(plt => plt.PriceListName);
+            priceListTypeBuilder.HasOne(plt => plt.VATTaxType)
+                .WithOne()
+                .OnDelete(DeleteBehavior.SetNull);
         }
     }
 }

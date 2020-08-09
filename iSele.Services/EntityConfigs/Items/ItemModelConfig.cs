@@ -17,9 +17,6 @@ namespace iSele.Services.EntityConfigs.Items
             itemModelBuilder.HasOne(i => i.ItemType)
                 .WithMany()
                 .OnDelete(DeleteBehavior.SetNull);
-            itemModelBuilder.HasOne(i => i.ItemType)
-                .WithMany()
-                .OnDelete(DeleteBehavior.SetNull);
             itemModelBuilder.HasOne(i => i.ItemUnit)
                 .WithMany()
                 .OnDelete(DeleteBehavior.SetNull);

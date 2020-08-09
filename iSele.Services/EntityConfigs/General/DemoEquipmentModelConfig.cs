@@ -12,7 +12,7 @@ namespace iSele.Services.EntityConfigs.General
             demoEquipmentBuilder.HasOne(de => de.EquipmentType)
                 .WithMany()
                 .OnDelete(DeleteBehavior.SetNull);
-            demoEquipmentBuilder.HasMany(de => de.DemoEquipmentUsages)
+            demoEquipmentBuilder.HasMany(de => de.DemoEquipmentUsage)
                 .WithOne()
                 .OnDelete(DeleteBehavior.ClientSetNull);
         }

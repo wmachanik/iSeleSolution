@@ -15,14 +15,14 @@ namespace iSele.Models.Customers
         public int CustomerID { get; set; }
         [Required(ErrorMessage ="A Company name is required")]
         [StringLength(100)]
-        public int CustomerName { get; set; }
+        public string CustomerName { get; set; }
         [Required(ErrorMessage = "Provide a primare contact's first name")]
         [StringLength(100)]
         [DisplayName("Primary Contact First Name")]
-        public int PrimaryContactFirstName { get; set; }
+        public string PrimaryContactFirstName { get; set; }
         [StringLength(100)]
         [DisplayName("Primary Contact Last Name")]
-        public int PrimaryContactLastName { get; set; }
+        public string PrimaryContactLastName { get; set; }
         [StringLength(100)]
         [DisplayName("Primary Contact email")]
         public string PrimaryContactEmail { get; set; }

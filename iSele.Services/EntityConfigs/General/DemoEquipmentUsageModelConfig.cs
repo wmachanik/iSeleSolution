@@ -9,13 +9,14 @@ namespace iSele.Services.EntityConfigs.General
         public void Configure(EntityTypeBuilder<DemoEquipmentUsage> demoEquipmentUsageBuilder)
         {
             demoEquipmentUsageBuilder.HasIndex(du => du.ReceiveDate);
-            demoEquipmentUsageBuilder.HasOne(du => du.Customer)
-                .WithMany()
-                .OnDelete(DeleteBehavior.SetNull);
-            // is this a good idea, since this table to basically the use of the demo equipment, if the equipment is deleted it should delete the associated usage records.
-            demoEquipmentUsageBuilder.HasOne(du => du.DemoEquipment)
-                .WithMany()
-                .OnDelete(DeleteBehavior.Cascade); 
+            //demoEquipmentUsageBuilder.HasOne(du => du.Customer)
+            //    .WithMany()
+            //    .HasForeignKey(du=>du.CustomerID)
+            //    .OnDelete(DeleteBehavior.SetNull);
+            //// is this a good idea, since this table to basically the use of the demo equipment, if the equipment is deleted it should delete the associated usage records.
+            //demoEquipmentUsageBuilder.HasOne(du => du.DemoEquipment)
+            //    .WithMany()
+            //    .OnDelete(DeleteBehavior.Cascade); 
 
 
         }

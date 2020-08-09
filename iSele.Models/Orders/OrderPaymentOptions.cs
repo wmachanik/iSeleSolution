@@ -6,9 +6,9 @@ using System.Text;
 
 namespace iSele.Models.Orders
 {
-    public class OrderPaymentOption
+    public class OrderPaymentOptions
     {
-        public int OrderPaymentOptionID { get; set; }
+        public int OrderPaymentOptionsID { get; set; }
         [Required]
         public int OrderID { get; set; }
         [StringLength(100)]
@@ -17,7 +17,7 @@ namespace iSele.Models.Orders
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "Payment Date")]
         public DateTime PaymentDate { get; set; }
-        public int PaymentTypeID { get; set; }
+        public int? PaymentTypeID { get; set; }
 
         public PaymentType PaymentType { get; set; }
 

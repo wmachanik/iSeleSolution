@@ -9,10 +9,13 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using iSele.Services;
 using Microsoft.Extensions.Options;
+using iSele.Repository.Interfaces;
+using iSele.Models.Customers;
+using iSele.Repository.Repositories;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace iSele.Web.FrontEnd
 {
@@ -42,6 +45,10 @@ namespace iSele.Web.FrontEnd
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("iSeleConnection")));
             services.AddRazorPages();
+
+            services.AddRepositories();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

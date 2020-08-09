@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace iSele.Models.General
@@ -10,6 +12,7 @@ namespace iSele.Models.General
     {
         public int AreaID { get; set; }
         [StringLength(75)]
+        [NotNull]
         [DisplayName("Area")]
         public string AreaName { get; set; }
         [Required]
@@ -21,6 +24,10 @@ namespace iSele.Models.General
         [DisplayName("Estimate Delivery Delay")]
         public short? EstimatedDeliveryDelay { get; set; }
         public string Note { get; set; }
+
+        [ForeignKey("AreaID")]
+        public ICollection<AreaDaySetting> AreaDaySettings { get; set; }
+
         [Timestamp] 
         public byte[] RowVersion { get; set; }
     }

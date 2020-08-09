@@ -21,7 +21,8 @@ namespace iSele.Models.Accounts
         [DisplayName("Is this the default rate")]
         public bool? IsDefault { get; set; }
         public string Notes { get; set; }
-        [Timestamp] public byte[] RowVersion { get; set; }
+        [Timestamp]
+        public byte[] RowVersion { get; set; }
 }
 
 }

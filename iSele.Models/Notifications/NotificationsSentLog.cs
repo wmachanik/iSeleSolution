@@ -12,14 +12,21 @@ namespace iSele.Models.Notifications
         public int NotificationsSentLogID {get; set; }
         public int CustomerID { get; set; }
         public DateTime DateSentNotification { get; set; }
-        public DateTime NextPreperationDate { get; set; }
-        public bool IsNotificationSent { get; set; }
-        public bool HadAutoFulfilItem { get; set; }
-        public bool HadReoccurItems { get; set; }
-        [Timestamp] public byte[] RowVersion { get; set; }
+        // public DateTime NextPreperationDate { get; set; }
+        public int? NotificationTypeID { get; set; }
+        public bool NotificationWasSent { get; set; }
+        public string NotificationDesription { get; set; }
+
+        // used to have these - now that will go into description
+        //public bool HadAutoFulfilItem { get; set; }
+        //public bool HadReoccurItems { get; set; }
+        
+        [Timestamp] 
+        public byte[] RowVersion { get; set; }
 
         [ForeignKey("CustomerID")]
         public Customer Customer { get; set; }
+        public NotificationType NotificationType { get; set; }
 
     }
 

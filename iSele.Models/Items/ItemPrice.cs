@@ -12,10 +12,14 @@ namespace iSele.Models.Items
     {
         public int ItemPriceID { get; set; }
         public int ItemID { get; set; }
-        public int PriceListTypeID { get; set; }
+        public int? PriceListTypeID { get; set; }
         public string Notes { get; set; }
         [Timestamp]    
         public byte[] RowVersion { get; set; }
+
+//        [ForeignKey("ItemID")]
+//        public Item Item { get; set; }
+
         [ForeignKey("PriceListTypeID")]
         public PriceListType PriceListType { get; set; }
     }

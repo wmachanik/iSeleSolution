@@ -7,7 +7,7 @@ namespace iSele.Models.General
 {
     public class TimeZone
     {
-        public int TimZoneID { get; set; }
+        public int TimeZoneID { get; set; }
         [Required]
         [StringLength(10)]
         public string ISOAbbreviation { get; set; }

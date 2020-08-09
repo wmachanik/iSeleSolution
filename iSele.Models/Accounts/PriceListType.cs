@@ -13,7 +13,7 @@ namespace iSele.Models.Accounts
         [DisplayName("Price List")]
         public string PriceListName { get; set; }
         public int PriceTypeID { get; set; }
-        public int VATTaxTypeID { get; set; }
+        public int? VATTaxTypeID { get; set; }
          public string Notes { get; set; }
         [Timestamp] 
         public byte[] RowVersion { get; set; }

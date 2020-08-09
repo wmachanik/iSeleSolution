@@ -9,9 +9,9 @@ namespace iSele.Services.EntityConfigs.Customers
         public void Configure(EntityTypeBuilder<CustomerEquipment> customerEquipmentBuilder)
         {
             customerEquipmentBuilder.HasIndex(ce => ce.EquipSerialNo);
-            customerEquipmentBuilder.HasOne(ce => ce.Customer)
-                .WithMany()
-                .OnDelete(DeleteBehavior.SetNull);
+            //customerEquipmentBuilder.HasOne(ce => ce.Customer)
+            //    .WithMany()
+            //    .OnDelete(DeleteBehavior.SetNull);
             customerEquipmentBuilder.HasOne(ce => ce.EquipmentType)
                 .WithOne()
                 .OnDelete(DeleteBehavior.SetNull);

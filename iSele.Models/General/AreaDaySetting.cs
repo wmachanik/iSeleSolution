@@ -11,21 +11,23 @@ namespace iSele.Models.General
     public class AreaDaySetting
     {
         public int AreaDaySettingID { get; set; }
-        [StringLength(80)]
-        [DisplayName("Area Name")]
-        public string AreaName { get; set; }
-        public int CityID { get; set; }
-        public int PreperationDayOfWeekID { get; set; }
+        //[StringLength(80)]
+        //[DisplayName("Area Name")]
+        [ForeignKey("Area")]
+        public int? AreaID { get; set; }
+        // public int? CityID { get; set; }
+        public int? PreperationDayOfWeekID { get; set; }
         [DisplayName("Dispatch Delay Days")]
         public short DispatchDelayDays { get; set; }
         [DisplayName("Delivery Order")]
         public short DeliveryOrder { get; set; }
         [DisplayName("Estimate Delivery Daily")]
-        public short EstimateDeliveryDaily { get; set; }
+        public short EstimateDeliveryDelay { get; set; }
         public string Notes { get; set; }
 
-        public City City { get; set; }
-        [ForeignKey("PreperationDayOfWeekID ")]
+        public Area Area { get; set; }
+        //public City City { get; set; }
+        [ForeignKey("PreperationDayOfWeekID")]
         public WeekDay PreperationDayOfWeek { get; set; }
 
     }

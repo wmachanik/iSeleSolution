@@ -1,0 +1,103 @@
+﻿@page
+@model iSele.Web.FrontEnd.Pages.Customers.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer[0].CustomerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer[0].PrimaryContactFirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer[0].PrimaryContactLastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer[0].PrimaryContactEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer[0].Telephone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer[0].Mobile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer[0].IsMobilePrimary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer[0].IsEnabled)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer[0].RowVersion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer[0].CustomerType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer[0].CustomerFulfilmentOptions)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer[0].CustomerAccountingOptions)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Customer) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrimaryContactFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrimaryContactLastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrimaryContactEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telephone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mobile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsMobilePrimary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsEnabled)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RowVersion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerType.CustomerTypeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerFulfilmentOptions.CustomerFulfilmentOptionsID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerAccountingOptions.VATTaxNum)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.CustomerID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.CustomerID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.CustomerID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

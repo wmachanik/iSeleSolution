@@ -19,14 +19,14 @@ namespace iSele.Models.Customers
         [Required]
         [DisplayName("VAT/Tax Number")]
         public string VATTaxNum { get; set; }
-        public int PrimaryBillingAddressID { get; set; }
-        public int PrimaryShippingAddressID { get; set; }
+        public int? PrimaryBillingAddressID { get; set; }
+        public int? PrimaryShippingAddressID { get; set; }
         [StringLength(200)]
         [DisplayName("Emails for acconts (seperated by ';')")]
         public string AccEmails { get; set; }
         [DisplayName("Only Email Invoices")]
         public bool? OnlyEmailInvoices { get; set; }
-        public int PaymentTermsID { get; set; }
+        public int? PaymentTermsID { get; set; }
         [Column(TypeName = "decimal(18,4)")]
         public decimal Limit { get; set; }
         [StringLength(100), DisplayName("Full Company Name")]
@@ -35,8 +35,8 @@ namespace iSele.Models.Customers
         public string AccountContactName { get; set; }
         [DisplayName("Purchase Order is Required")]
         public bool? IsPORequired { get; set; }
-        public int PriceLevelID { get; set; }
-        public int InvoiceTypeID { get; set; }
+        public int? PriceLevelID { get; set; }
+        public int? InvoiceTypeID { get; set; }
         [DefaultValue("TRUE"), DisplayName("Account is enabled")]
         public bool? AccountIsEnabled { get; set; }
         public string Notes { get; set; }

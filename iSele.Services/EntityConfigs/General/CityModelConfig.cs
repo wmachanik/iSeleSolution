@@ -8,7 +8,8 @@ namespace iSele.Services.EntityConfigs.General
     {
         public void Configure(EntityTypeBuilder<City> cityBuilder)
         {
-            cityBuilder.HasIndex(cty => cty.CityName).IsUnique();
+            cityBuilder.HasIndex(cty => cty.CityName)
+                .IsUnique();
             cityBuilder.HasOne(cty => cty.Area)
                 .WithMany()
                 .OnDelete(DeleteBehavior.SetNull);

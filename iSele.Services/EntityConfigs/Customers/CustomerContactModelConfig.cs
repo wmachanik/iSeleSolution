@@ -16,13 +16,13 @@ namespace iSele.Services.EntityConfigs.Customers
             customerCotnactBuilder.Property(cc => cc.IsEnabled).HasDefaultValue(true);
             customerCotnactBuilder.HasOne(cc => cc.PostalAddress)
                 .WithOne()
-                .OnDelete(DeleteBehavior.SetNull);
+                .OnDelete(DeleteBehavior.NoAction);
             customerCotnactBuilder.HasOne(cc => cc.ShippingAddress)
                 .WithOne()
-                .OnDelete(DeleteBehavior.SetNull);
+                .OnDelete(DeleteBehavior.NoAction);
             customerCotnactBuilder.HasOne(cc => cc.ContactType)
                 .WithOne()
-                .OnDelete(DeleteBehavior.SetNull);
+                .OnDelete(DeleteBehavior.NoAction);            
         }
     }
 }

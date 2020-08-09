@@ -1,4 +1,5 @@
-﻿using iSele.Models.System;
+﻿using iSele.Models.Customers;
+using iSele.Models.System;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -12,7 +13,7 @@ namespace iSele.Models.Orders
         [Key]
         public int RecurringOrderID { get; set; }
         public int CustomerID { get; set; }
-        public int RecurringTypeID { get; set; }
+        public int? RecurringTypeID { get; set; }
         public int RecurringValue { get; set; }
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
@@ -26,15 +27,17 @@ namespace iSele.Models.Orders
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "Date Last Done")]
         public DateTime DateLastDone { get; set; }
-        public int DeliveryByID { get; set; }
+        public int? DeliveryByID { get; set; }
         public bool Enabled { get; set; }
         public string Notes { get; set; }
         [Timestamp] 
         public byte[] RowVersion { get; set; }
-
+        [ForeignKey("CustomerID")]
+        public Customer Customer { get; set; }
+        [ForeignKey("RecurringTypeID")]
         public RecurringType RecurringType { get; set; }
         [ForeignKey("DeliveryByID")]
-        public Person DeliveryBy { get; set; }
+        public Party DeliveryBy { get; set; }
         [ForeignKey("RecurringOrderID")]
         public ICollection<RecurringOrderItem> RecurringOrderItems { get; set; }
     }

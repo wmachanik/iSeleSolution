@@ -25,12 +25,12 @@ namespace iSele.Models.Customers
         public string Telephone { get; set; }
         [StringLength(25)]
         public string Mobile { get; set; }
-        public int ShippingAddressID { get; set; }
-        public int PostalAddressID { get; set; }
+        public int? ShippingAddressID { get; set; }
+        public int? PostalAddressID { get; set; }
         [DisplayName("Enabled")]
         public bool? IsEnabled { get; set; }
         [DisplayName("Contact Type")]
-        public int ContactTypeID { get; set; }
+        public int? ContactTypeID { get; set; }
         public string Notes { get; set; }
 
         [Timestamp]

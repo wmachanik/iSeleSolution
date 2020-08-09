@@ -14,13 +14,13 @@ namespace iSele.Models.General
         [DisplayName("Demo Equipment Name")]
         [StringLength(80)]
         public string DemoEquipmentName { get; set; }
-        public int EquipmentTypeID { get; set; }
+        public int? EquipmentTypeID { get; set; }
         [DisplayName("Serial Number")]
         [StringLength(80)]
         public string SerialNumber { get; set; }
         public string Notes { get; set; }
         public EquipmentType EquipmentType { get; set; }
         [ForeignKey("DemoEquipmentID")]
-        public ICollection<DemoEquipmentUsage> DemoEquipmentUsages { get; set; }
+        public ICollection<DemoEquipmentUsage> DemoEquipmentUsage { get; set; }
     }
 }

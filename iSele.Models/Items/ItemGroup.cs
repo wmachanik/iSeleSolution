@@ -10,8 +10,8 @@ namespace iSele.Models.Items
     {
         public int ItemGroupID { get; set; }
         // this is the ItemTypeID of of the group in the Item Table
-        public int GroupItemID { get; set; }
-        public int ItemID { get; set; }
+        public int? GroupItemID { get; set; }
+        public int? ItemID { get; set; }
         public int ItemSortPos { get; set; }
         public bool IsEnabled { get; set; }
         public string Notes { get; set; }

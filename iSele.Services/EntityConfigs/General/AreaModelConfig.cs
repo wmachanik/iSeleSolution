@@ -13,6 +13,11 @@ namespace iSele.Services.EntityConfigs.General
                 .IsUnique();
             areaBuilder.Property(ar => ar.EstimatedDeliveryDelay)
                 .HasDefaultValue(Convert.ToInt16(0));
+
+            areaBuilder.HasMany(ar => ar.AreaDaySettings)
+                .WithOne()
+                .OnDelete(DeleteBehavior.Cascade);
+
         }
     }
 }

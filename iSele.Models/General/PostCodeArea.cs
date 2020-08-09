@@ -18,7 +18,7 @@ namespace iSele.Models.General
         [StringLength(15)]
         [DisplayName("Postal Code End")]
         public string PostCodeEnd { get; set; }
-        public int AreaDayID { get; set; }
+        public int? AreaDayID { get; set; }
         public string Notes { get; set; }
         [Timestamp]
         public byte[] RowVersion { get; set; }

@@ -1,0 +1,69 @@
+﻿@page "/migratecustomers"
+@*@inherits SubPages.MigrationStatus*@
+@inherits MigrateCustomersBase
+
+<h3>Migrate Customers</h3>
+
+
+<div class="card">
+    <div class="card-header">
+        <QOnT2iSeleMigration.Web.FrontEnd.Pages.SubPages.MigrationStatus MigrationStati="MigrationStati" OnStatiChange="UpdateStati" />
+    </div>
+    <div></div>
+
+    <div class="card-footer">
+        @if (MigrateStatusStr == string.Empty)
+        {
+            <div class="active">
+                Click it.
+            </div>
+        }
+        else
+        {
+            <div class="alert-info">
+                @MigrateStatusStr;
+            </div>
+        }
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3"><button class="btn-outline-primary" @onclick="MigrateAllCustomers_Click">All</button></div>
+        <div class="col-3"><button class="btn-primary" @onclick="MigrateCity_Click">Migrate City</button></div>
+        <div class="col-3"><button class="btn-primary">Migrate Customer Type</button></div>
+        <div class="col-3"><button class="btn-primary">Migrate Customers</button></div>
+    </div>
+</div>
+
+<hr />
+
+@*<div class="container-fluid alert-info">
+
+    @if (QonTCities == null)
+    {
+        <div class="spinner"></div>
+    }
+    else
+    {
+
+        <div class="row">
+            <div class="col thead-dark">
+                id
+            </div>
+            <div class="col thead-light">
+                City
+            </div>
+        </div>
+        @foreach (var city in QonTCities)
+        {
+            <div class="row">
+                <div class="col ">
+                    @city.Id
+                </div>
+                <div class="col">
+                    @city.City
+                </div>
+            </div>
+        }
+    }
+</div>*@

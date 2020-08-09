@@ -20,15 +20,14 @@ namespace iSele.Models.Customers
         [DisplayName("Address Line 3")]
         [StringLength(75)]
         public string AddressLine3 { get; set; }
-        [DisplayName("City")]
-        public int CityID { get; set; }
+        public int? CityID { get; set; }
         [StringLength(10)]
         [DisplayName("Postal Code")]
         public string PostalCode { get; set; }
         public string Notes { get; set; }
         [Timestamp] 
         public byte[] RowVersion { get; set; }
-
+        [DisplayName("City")]
         public City City { get; set; }
     }
 }

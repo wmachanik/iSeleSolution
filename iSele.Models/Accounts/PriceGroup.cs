@@ -16,7 +16,7 @@ namespace iSele.Models.Accounts
         [Required]
         [DisplayName("Price Group Name")]
         public string PriceGroupName { get; set; }
-        public int PriceListTypeID { get; set; }
+        public int? PriceListTypeID { get; set; }
         public string Notes { get; set; }
         [Timestamp] 
         public byte[] RowVersion { get; set; }

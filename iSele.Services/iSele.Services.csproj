@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="EntityConfigs\Notifications\NotificationEmailTextModelConfig.cs" />
     <Compile Remove="Migrations\20200611162232_initial.cs" />
     <Compile Remove="Migrations\20200611162232_initial.Designer.cs" />
     <Compile Remove="Migrations\20200612120421_testingOndelete.cs" />
@@ -65,6 +66,40 @@
     <Compile Remove="Migrations\20200622122439_InitialWithCustomer.Designer.cs" />
     <Compile Remove="Migrations\20200622122657_InitialWithCustomer.cs" />
     <Compile Remove="Migrations\20200622122657_InitialWithCustomer.Designer.cs" />
+    <Compile Remove="Migrations\20200623075144_InitialWithCustomer.cs" />
+    <Compile Remove="Migrations\20200623075144_InitialWithCustomer.Designer.cs" />
+    <Compile Remove="Migrations\20200624162553_InitialWithDbV1.cs" />
+    <Compile Remove="Migrations\20200624162553_InitialWithDbV1.Designer.cs" />
+    <Compile Remove="Migrations\20200625103135_InitialWithDbV1.cs" />
+    <Compile Remove="Migrations\20200625103135_InitialWithDbV1.Designer.cs" />
+    <Compile Remove="Migrations\20200625114235_InitialWithDbV1.cs" />
+    <Compile Remove="Migrations\20200625114235_InitialWithDbV1.Designer.cs" />
+    <Compile Remove="Migrations\20200625114626_InitialWithDbV1.cs" />
+    <Compile Remove="Migrations\20200625114626_InitialWithDbV1.Designer.cs" />
+    <Compile Remove="Migrations\20200625115008_InitialWithDbV1.cs" />
+    <Compile Remove="Migrations\20200625115008_InitialWithDbV1.Designer.cs" />
+    <Compile Remove="Migrations\20200625120632_InitialWithDbV1.cs" />
+    <Compile Remove="Migrations\20200625120632_InitialWithDbV1.Designer.cs" />
+    <Compile Remove="Migrations\20200625121304_InitialWithDbV1.cs" />
+    <Compile Remove="Migrations\20200625121304_InitialWithDbV1.Designer.cs" />
+    <Compile Remove="Migrations\20200625122126_InitialWithDbV1.cs" />
+    <Compile Remove="Migrations\20200625122126_InitialWithDbV1.Designer.cs" />
+    <Compile Remove="Migrations\20200625122318_InitialWithDbV1.cs" />
+    <Compile Remove="Migrations\20200625122318_InitialWithDbV1.Designer.cs" />
+    <Compile Remove="Migrations\20200625124028_InitialWithDbV1.cs" />
+    <Compile Remove="Migrations\20200625124028_InitialWithDbV1.Designer.cs" />
+    <Compile Remove="Migrations\20200625130538_InitialWithDbV1.cs" />
+    <Compile Remove="Migrations\20200625130538_InitialWithDbV1.Designer.cs" />
+    <Compile Remove="Migrations\20200626101332_InitialWithDbV1.cs" />
+    <Compile Remove="Migrations\20200626101332_InitialWithDbV1.Designer.cs" />
+    <Compile Remove="Migrations\20200626104437_InitialWithDbV1.cs" />
+    <Compile Remove="Migrations\20200626104437_InitialWithDbV1.Designer.cs" />
+    <Compile Remove="Migrations\20200626125221_InitialWithDbV1.cs" />
+    <Compile Remove="Migrations\20200626125221_InitialWithDbV1.Designer.cs" />
+    <Compile Remove="Migrations\20200629102556_DBCheckV1.1.cs" />
+    <Compile Remove="Migrations\20200629102556_DBCheckV1.1.Designer.cs" />
+    <Compile Remove="Migrations\20200801180422_ChangesToCityAndArea.cs" />
+    <Compile Remove="Migrations\20200801180422_ChangesToCityAndArea.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -74,14 +109,16 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.5" />
+    <PackageReference Include="NLog.Extensions.Logging" Version="1.6.4" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\iSele.Models\iSele.Models.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Migrations\" />
-  </ItemGroup>
+  <!--<ItemGroup>
+    <ProjectReference Include="..\..\..\Solutions\iSele\iSele.Models.csproj" />
+    <ProjectReference Include="..\..\..\Solutions\iSele\iSele.Repository.csproj" />
+  </ItemGroup>-->
 
 </Project>

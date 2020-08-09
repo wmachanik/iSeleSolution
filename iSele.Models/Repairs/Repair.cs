@@ -15,7 +15,7 @@ namespace iSele.Models.Repairs
     {
         public int RepairID { get; set; }
         [Required]
-        public int CustomerID { get; set; }
+        public int? CustomerID { get; set; }
         [StringLength(75)]
         [DisplayName("Contact Name for Repair")]
         public string ContactName { get; set; }
@@ -34,12 +34,12 @@ namespace iSele.Models.Repairs
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime LastStatusChange { get; set; }
         [DisplayName("Equipment Type")]
-        public int EquipmentTypeID { get; set; }
+        public int? EquipmentTypeID { get; set; }
         [DisplayName("Equipment Serial Number")]
         [StringLength(75)]
         public string EquipmentSerialNumber { get; set; }
-        public int SwopOutEquipmentID { get; set; }
-        public int MachineConditionID { get; set; }
+        public int? SwopOutEquipmentID { get; set; }
+        public int? MachineConditionID { get; set; }
         [DisplayName("We took the frother ")]
         public bool TakenFrother { get; set; }
         [DisplayName("We took the Bean lid")]
@@ -52,12 +52,12 @@ namespace iSele.Models.Repairs
         public bool IsBeanLidOk { get; set; }
         [DisplayName("Is bater lid ok")]
         public bool IsWaterLidOk { get; set; }
-        public int RepairFaultID { get; set; }
+        public int? RepairFaultID { get; set; }
         [DisplayName("What is the fault")]
         [StringLength(255)]
         public string RepairFaultDesc { get; set; }
-        public int RepairStatusID { get; set; }
-        public int RelatedOrderID { get; set; }
+        public int? RepairStatusID { get; set; }
+        public int? RelatedOrderID { get; set; }
         [DisplayName("Any additionla Notes")]
         public int Notes { get; set; }
         [Timestamp] public byte[] RowVersion { get; set; }

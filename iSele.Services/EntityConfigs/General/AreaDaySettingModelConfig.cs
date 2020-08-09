@@ -8,10 +8,9 @@ namespace iSele.Services.EntityConfigs.General
     {
         public void Configure(EntityTypeBuilder<AreaDaySetting> areaDaySettingBuilder)
         {
-            areaDaySettingBuilder.HasIndex(ads => ads.AreaName).IsUnique();
-            areaDaySettingBuilder.HasOne(ads => ads.City)
+            areaDaySettingBuilder.HasOne(ard => ard.Area)
                 .WithMany()
-                .OnDelete(DeleteBehavior.SetNull);
+                .OnDelete(DeleteBehavior.NoAction);
             areaDaySettingBuilder.HasOne(ads => ads.PreperationDayOfWeek)
                 .WithMany()
                 .OnDelete(DeleteBehavior.SetNull);

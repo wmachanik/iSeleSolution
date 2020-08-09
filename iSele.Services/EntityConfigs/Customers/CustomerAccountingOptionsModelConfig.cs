@@ -17,10 +17,10 @@ namespace iSele.Services.EntityConfigs.Customers
             customerAccountingOptionsBuilder.Property(cao => cao.OnlyEmailInvoices).HasDefaultValue(true);
             customerAccountingOptionsBuilder.HasOne(cao => cao.PrimaryBillingAddress)
                 .WithOne()
-                .OnDelete(DeleteBehavior.SetNull);
+                .OnDelete(DeleteBehavior.NoAction);
             customerAccountingOptionsBuilder.HasOne(cao => cao.PrimaryShippingAddress)
                 .WithOne()
-                .OnDelete(DeleteBehavior.SetNull);
+                .OnDelete(DeleteBehavior.NoAction);
             customerAccountingOptionsBuilder.HasOne(cao => cao.InvoiceType)
                 .WithOne()
                 .OnDelete(DeleteBehavior.SetNull);

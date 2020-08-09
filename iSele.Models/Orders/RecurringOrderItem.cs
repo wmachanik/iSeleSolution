@@ -12,9 +12,9 @@ namespace iSele.Models.Orders
     {
         public int RecurringOrderItemID { get; set; }
         public int RecurringOrderID { get; set; }
-        public int ItemRequiredID { get; set; }
-        public int PackagingRequiredID { get; set; }
-        public int VarietyRequiredID { get; set; }
+        public int? ItemRequiredID { get; set; }
+        public int? PackagingRequiredID { get; set; }
+        public int? VarietyRequiredID { get; set; }
         [DataType("decimal(12,4)")]
         [Column(TypeName = "decimal(8,4)")]
         [DisplayName("Qty")]

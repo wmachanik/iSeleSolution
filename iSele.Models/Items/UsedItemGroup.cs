@@ -1,4 +1,5 @@
-﻿using System;
+﻿using iSele.Models.Customers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -14,10 +15,13 @@ namespace iSele.Models.Items
         public int LastItemID { get; set; }
         public int LastItemSortPos { get; set; }
         public DateTime LastItemDateChanged { get; set; }
-        //[Timestamp] 
-        //public byte[] RowVersion { get; set; }
-        //[ForeignKey("GroupItemID")]
-        //public Item GroupItemName { get; set; }
+        [Timestamp] 
+        public byte[] RowVersion { get; set; }
+
+        [ForeignKey("CustomerID")]
+        public Customer Customer { get; set; }
+        [ForeignKey("GroupItemID")]
+        public Item GroupItemName { get; set; }
         //[ForeignKey("LastItemID")]
         //public Item LastItem { get; set; }
 

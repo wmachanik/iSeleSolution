@@ -11,9 +11,9 @@ namespace iSele.Models.Customers
 
         public int CustomerPrefPerTypeID { get; set; }
         public int CustomerID { get; set; }
-        public int ItemID { get; set; }
-        public int PackagingID { get; set; }
-        public int VarietyID { get; set; }
+        public int? ItemID { get; set; }
+        public int? PackagingID { get; set; }
+        public int? VarietyID { get; set; }
         public string Notes { get; set; }
         [Timestamp]
         public byte[] RowVersion { get; set; }

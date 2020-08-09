@@ -1,0 +1,76 @@
+﻿@page
+@model iSele.Web.FrontEnd.Pages.Customers.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Customer</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Customer.CustomerID" />
+            <div class="form-group">
+                <label asp-for="Customer.CustomerName" class="control-label"></label>
+                <input asp-for="Customer.CustomerName" class="form-control" />
+                <span asp-validation-for="Customer.CustomerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customer.PrimaryContactFirstName" class="control-label"></label>
+                <input asp-for="Customer.PrimaryContactFirstName" class="form-control" />
+                <span asp-validation-for="Customer.PrimaryContactFirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customer.PrimaryContactLastName" class="control-label"></label>
+                <input asp-for="Customer.PrimaryContactLastName" class="form-control" />
+                <span asp-validation-for="Customer.PrimaryContactLastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customer.PrimaryContactEmail" class="control-label"></label>
+                <input asp-for="Customer.PrimaryContactEmail" class="form-control" />
+                <span asp-validation-for="Customer.PrimaryContactEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customer.Telephone" class="control-label"></label>
+                <input asp-for="Customer.Telephone" class="form-control" />
+                <span asp-validation-for="Customer.Telephone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customer.Mobile" class="control-label"></label>
+                <input asp-for="Customer.Mobile" class="form-control" />
+                <span asp-validation-for="Customer.Mobile" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Customer.IsMobilePrimary" /> @Html.DisplayNameFor(model => model.Customer.IsMobilePrimary)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customer.IsEnabled" class="control-label"></label>
+                <input asp-for="Customer.IsEnabled" class="form-control" />
+                <span asp-validation-for="Customer.IsEnabled" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customer.CustomerTypeID" class="control-label"></label>
+                <select asp-for="Customer.CustomerTypeID" class="form-control" asp-items="ViewBag.CustomerTypeID"></select>
+                <span asp-validation-for="Customer.CustomerTypeID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,32 @@
+﻿@inherits SubPages.MigrationStatusBase
+
+<h4>MigrationStatus</h4>
+
+<div class="container-fluid">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Source Tbl</th>
+                <th>Src Rec#</th>
+                <th>Src Count</th>
+                <th>Target Tbl</th>
+                <th>Tgt #Ins</th>
+                <th>Tgt #Update</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@MigrationStati.SourceTable</td>
+                <td>@MigrationStati.CurrentSourceRecorderNumber</td>
+                <td>@MigrationStati.TargetRecordsUpdated</td>
+                <td>@MigrationStati.TargetTable</td>
+                <td>@MigrationStati.TargetRecordsInserted</td>
+                <td>@MigrationStati.TargetRecordsUpdated</td>
+                <td>@MigrationStati.MergeStatus</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+

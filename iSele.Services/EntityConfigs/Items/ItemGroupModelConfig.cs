@@ -13,7 +13,7 @@ namespace iSele.Services.EntityConfigs.Items
                 .OnDelete(DeleteBehavior.SetNull);
             itemGroupBuilder.HasOne(ig => ig.Item)
                 .WithMany()
-                .OnDelete(DeleteBehavior.SetNull);
+                .OnDelete(DeleteBehavior.NoAction);
         }
     }
 }
